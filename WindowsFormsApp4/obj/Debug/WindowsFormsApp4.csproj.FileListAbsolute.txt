@@ -8,3 +8,13 @@ D:\Мои документы\GitHub\FormProject\FormCalculator\WindowsFormsApp4\
 D:\Мои документы\GitHub\FormProject\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
 D:\Мои документы\GitHub\FormProject\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
 D:\Мои документы\GitHub\FormProject\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe.config
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.pdb
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csprojAssemblyReference.cache
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Form1.resources
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
+D:\GITHRepositary\FormCalculator\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb

@@ -18,9 +18,14 @@ namespace WindowsFormsApp4
         }
         private double Calculation()
         {
-            double a = Convert.ToDouble(number.Text);
-            double b = Convert.ToDouble(textBox1.Text);
-                
+            double a = 0;
+            double b = 0;
+             if (number.Text != "" && textBox1.Text != "")
+            {
+                a = Convert.ToDouble(number.Text);
+                b = Convert.ToDouble(textBox1.Text);
+            }
+
             switch (oper.Text)
             {
                 case "+":
@@ -32,7 +37,7 @@ namespace WindowsFormsApp4
                 case "/":
                     return a / b;
                 default:
-                    return 0;
+                    return Convert.ToDouble(textBox1.Text);
             }
         }
         private void number1_Click(object sender, EventArgs e)
@@ -87,7 +92,7 @@ namespace WindowsFormsApp4
 
         private void minus_Click(object sender, EventArgs e)
         {
-            number.Text = textBox1.Text;
+            number.Text = $"{Calculation()}";
             oper.Text = "-";
             textBox1.Clear();
         }
@@ -101,14 +106,14 @@ namespace WindowsFormsApp4
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            number.Text = textBox1.Text;
+            number.Text = $"{Calculation()}";
             oper.Text = "/";
             textBox1.Clear();
         }
 
         private void umnogenieButton_Click(object sender, EventArgs e)
         {
-            number.Text = textBox1.Text;
+            number.Text = $"{Calculation()}";
             oper.Text = "*";
             textBox1.Clear();
         }
@@ -116,6 +121,8 @@ namespace WindowsFormsApp4
         private void ravno_Click(object sender, EventArgs e)
         {
            textBox1.Text = $"{Calculation()}";
+            oper.Text = "";
+            number.Text = "";
         }
 
         private void dotButton_Click(object sender, EventArgs e)
@@ -126,6 +133,8 @@ namespace WindowsFormsApp4
         private void btnCE_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+            oper.Text = "";
+            number.Text = "";
         }
 
         private void btnClear_Click(object sender, EventArgs e)

@@ -238,21 +238,20 @@
             this.btnCE.UseVisualStyleBackColor = true;
             this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
             // 
-            // label1
+            // number
             // 
             this.number.AutoSize = true;
             this.number.Location = new System.Drawing.Point(96, 9);
-            this.number.Name = "label1";
-            this.number.Size = new System.Drawing.Size(13, 13);
+            this.number.Name = "number";
+            this.number.Size = new System.Drawing.Size(0, 13);
             this.number.TabIndex = 36;
-            this.number.Text = "0";
             this.number.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // oper
             // 
             this.oper.AutoSize = true;
             this.oper.Location = new System.Drawing.Point(134, 9);
-            this.oper.Name = "label2";
+            this.oper.Name = "oper";
             this.oper.Size = new System.Drawing.Size(0, 13);
             this.oper.TabIndex = 37;
             // 
