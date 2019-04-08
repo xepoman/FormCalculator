@@ -16,5 +16,127 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
         }
+        private double Calculation()
+        {
+            double a = Convert.ToDouble(number.Text);
+            double b = Convert.ToDouble(textBox1.Text);
+                
+            switch (oper.Text)
+            {
+                case "+":
+                    return a + b;
+                case "-":
+                    return a - b;
+                case "*":
+                    return a * b;
+                case "/":
+                    return a / b;
+                default:
+                    return 0;
+            }
+        }
+        private void number1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "1";
+        }
+
+        private void number2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "2";
+        }
+
+        private void number3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "3";
+        }
+
+        private void number4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "4";
+        }
+
+        private void number5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "5";
+        }
+
+        private void number6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "6";
+        }
+
+        private void number7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "7";
+        }
+
+        private void number8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "8";
+        }
+
+        private void number9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "9";
+        }
+
+        private void number0_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "0";
+        }
+
+        private void minus_Click(object sender, EventArgs e)
+        {
+            number.Text = textBox1.Text;
+            oper.Text = "-";
+            textBox1.Clear();
+        }
+
+        private void plus_Click(object sender, EventArgs e)
+        {
+            number.Text = $"{Calculation()}";
+            oper.Text = "+";
+            textBox1.Clear();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            number.Text = textBox1.Text;
+            oper.Text = "/";
+            textBox1.Clear();
+        }
+
+        private void umnogenieButton_Click(object sender, EventArgs e)
+        {
+            number.Text = textBox1.Text;
+            oper.Text = "*";
+            textBox1.Clear();
+        }
+
+        private void ravno_Click(object sender, EventArgs e)
+        {
+           textBox1.Text = $"{Calculation()}";
+        }
+
+        private void dotButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCE_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

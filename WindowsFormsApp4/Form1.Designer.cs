@@ -47,6 +47,8 @@
             this.umnogenieButton = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCE = new System.Windows.Forms.Button();
+            this.number = new System.Windows.Forms.Label();
+            this.oper = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // number1
@@ -57,6 +59,7 @@
             this.number1.TabIndex = 0;
             this.number1.Text = "1";
             this.number1.UseVisualStyleBackColor = true;
+            this.number1.Click += new System.EventHandler(this.number1_Click);
             // 
             // textBox1
             // 
@@ -73,6 +76,7 @@
             this.number2.TabIndex = 19;
             this.number2.Text = "2";
             this.number2.UseVisualStyleBackColor = true;
+            this.number2.Click += new System.EventHandler(this.number2_Click);
             // 
             // number3
             // 
@@ -82,6 +86,7 @@
             this.number3.TabIndex = 20;
             this.number3.Text = "3";
             this.number3.UseVisualStyleBackColor = true;
+            this.number3.Click += new System.EventHandler(this.number3_Click);
             // 
             // number4
             // 
@@ -91,6 +96,7 @@
             this.number4.TabIndex = 21;
             this.number4.Text = "4";
             this.number4.UseVisualStyleBackColor = true;
+            this.number4.Click += new System.EventHandler(this.number4_Click);
             // 
             // number5
             // 
@@ -100,6 +106,7 @@
             this.number5.TabIndex = 22;
             this.number5.Text = "5";
             this.number5.UseVisualStyleBackColor = true;
+            this.number5.Click += new System.EventHandler(this.number5_Click);
             // 
             // number6
             // 
@@ -109,6 +116,7 @@
             this.number6.TabIndex = 23;
             this.number6.Text = "6";
             this.number6.UseVisualStyleBackColor = true;
+            this.number6.Click += new System.EventHandler(this.number6_Click);
             // 
             // number7
             // 
@@ -118,6 +126,7 @@
             this.number7.TabIndex = 24;
             this.number7.Text = "7";
             this.number7.UseVisualStyleBackColor = true;
+            this.number7.Click += new System.EventHandler(this.number7_Click);
             // 
             // number8
             // 
@@ -127,6 +136,7 @@
             this.number8.TabIndex = 25;
             this.number8.Text = "8";
             this.number8.UseVisualStyleBackColor = true;
+            this.number8.Click += new System.EventHandler(this.number8_Click);
             // 
             // number9
             // 
@@ -136,6 +146,7 @@
             this.number9.TabIndex = 26;
             this.number9.Text = "9";
             this.number9.UseVisualStyleBackColor = true;
+            this.number9.Click += new System.EventHandler(this.number9_Click);
             // 
             // number0
             // 
@@ -145,6 +156,7 @@
             this.number0.TabIndex = 27;
             this.number0.Text = "0";
             this.number0.UseVisualStyleBackColor = true;
+            this.number0.Click += new System.EventHandler(this.number0_Click);
             // 
             // minus
             // 
@@ -154,6 +166,7 @@
             this.minus.TabIndex = 28;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
+            this.minus.Click += new System.EventHandler(this.minus_Click);
             // 
             // plus
             // 
@@ -163,6 +176,7 @@
             this.plus.TabIndex = 29;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
+            this.plus.Click += new System.EventHandler(this.plus_Click);
             // 
             // Delete
             // 
@@ -172,6 +186,7 @@
             this.Delete.TabIndex = 30;
             this.Delete.Text = "/";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // ravno
             // 
@@ -181,6 +196,7 @@
             this.ravno.TabIndex = 31;
             this.ravno.Text = "=";
             this.ravno.UseVisualStyleBackColor = true;
+            this.ravno.Click += new System.EventHandler(this.ravno_Click);
             // 
             // dotButton
             // 
@@ -190,6 +206,7 @@
             this.dotButton.TabIndex = 32;
             this.dotButton.Text = ".";
             this.dotButton.UseVisualStyleBackColor = true;
+            this.dotButton.Click += new System.EventHandler(this.dotButton_Click);
             // 
             // umnogenieButton
             // 
@@ -199,6 +216,7 @@
             this.umnogenieButton.TabIndex = 33;
             this.umnogenieButton.Text = "*";
             this.umnogenieButton.UseVisualStyleBackColor = true;
+            this.umnogenieButton.Click += new System.EventHandler(this.umnogenieButton_Click);
             // 
             // btnClear
             // 
@@ -208,6 +226,7 @@
             this.btnClear.TabIndex = 34;
             this.btnClear.Text = "C";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCE
             // 
@@ -217,12 +236,33 @@
             this.btnCE.TabIndex = 35;
             this.btnCE.Text = "CE";
             this.btnCE.UseVisualStyleBackColor = true;
+            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
+            // 
+            // label1
+            // 
+            this.number.AutoSize = true;
+            this.number.Location = new System.Drawing.Point(96, 9);
+            this.number.Name = "label1";
+            this.number.Size = new System.Drawing.Size(13, 13);
+            this.number.TabIndex = 36;
+            this.number.Text = "0";
+            this.number.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.oper.AutoSize = true;
+            this.oper.Location = new System.Drawing.Point(134, 9);
+            this.oper.Name = "label2";
+            this.oper.Size = new System.Drawing.Size(0, 13);
+            this.oper.TabIndex = 37;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(187, 305);
+            this.Controls.Add(this.oper);
+            this.Controls.Add(this.number);
             this.Controls.Add(this.btnCE);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.umnogenieButton);
@@ -270,6 +310,8 @@
         private System.Windows.Forms.Button umnogenieButton;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCE;
+        private System.Windows.Forms.Label number;
+        private System.Windows.Forms.Label oper;
     }
 }
 
