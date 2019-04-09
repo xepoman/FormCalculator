@@ -12,6 +12,7 @@ namespace WindowsFormsApp4
 {
     public partial class Form1 : Form
     {
+        bool flag = false; 
         public Form1()
         {
             InitializeComponent();
@@ -42,51 +43,101 @@ namespace WindowsFormsApp4
         }
         private void number1_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "1";
         }
 
         private void number2_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "2";
         }
 
         private void number3_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "3";
         }
 
         private void number4_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "4";
         }
 
         private void number5_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "5";
         }
 
         private void number6_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "6";
         }
 
         private void number7_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "7";
         }
 
         private void number8_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "8";
         }
 
         private void number9_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "9";
         }
 
         private void number0_Click(object sender, EventArgs e)
         {
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
             textBox1.Text += "0";
         }
 
@@ -123,23 +174,29 @@ namespace WindowsFormsApp4
            textBox1.Text = $"{Calculation()}";
             oper.Text = "";
             number.Text = "";
+            flag = true;
         }
 
         private void dotButton_Click(object sender, EventArgs e)
         {
-
+            if (flag)
+            {
+                flag = false;
+                textBox1.Clear();
+            }
+            textBox1.Text += ",";
         }
 
         private void btnCE_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
-            oper.Text = "";
-            number.Text = "";
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            textBox1.Clear();
+            oper.Text = "";
+            number.Text = "";
         }
 
         private void label1_Click(object sender, EventArgs e)
