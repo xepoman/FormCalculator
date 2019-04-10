@@ -49,6 +49,12 @@
             this.btnCE = new System.Windows.Forms.Button();
             this.number = new System.Windows.Forms.Label();
             this.oper = new System.Windows.Forms.Label();
+            this.MemoryClear = new System.Windows.Forms.Button();
+            this.MemoryRead = new System.Windows.Forms.Button();
+            this.MemorySave = new System.Windows.Forms.Button();
+            this.MemoryPlus = new System.Windows.Forms.Button();
+            this.MemoryMinus = new System.Windows.Forms.Button();
+            this.Memory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // number1
@@ -63,9 +69,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(2, 25);
+            this.textBox1.Location = new System.Drawing.Point(12, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
+            this.textBox1.Size = new System.Drawing.Size(209, 20);
             this.textBox1.TabIndex = 12;
             // 
             // number2
@@ -255,11 +261,75 @@
             this.oper.Size = new System.Drawing.Size(0, 13);
             this.oper.TabIndex = 37;
             // 
+            // MemoryClear
+            // 
+            this.MemoryClear.Location = new System.Drawing.Point(182, 51);
+            this.MemoryClear.Name = "MemoryClear";
+            this.MemoryClear.Size = new System.Drawing.Size(39, 40);
+            this.MemoryClear.TabIndex = 38;
+            this.MemoryClear.Text = "MC";
+            this.MemoryClear.UseVisualStyleBackColor = true;
+            this.MemoryClear.Click += new System.EventHandler(this.MemoryClear_Click);
+            // 
+            // MemoryRead
+            // 
+            this.MemoryRead.Location = new System.Drawing.Point(182, 93);
+            this.MemoryRead.Name = "MemoryRead";
+            this.MemoryRead.Size = new System.Drawing.Size(39, 40);
+            this.MemoryRead.TabIndex = 39;
+            this.MemoryRead.Text = "MR";
+            this.MemoryRead.UseVisualStyleBackColor = true;
+            this.MemoryRead.Click += new System.EventHandler(this.MemoryRead_Click);
+            // 
+            // MemorySave
+            // 
+            this.MemorySave.Location = new System.Drawing.Point(182, 139);
+            this.MemorySave.Name = "MemorySave";
+            this.MemorySave.Size = new System.Drawing.Size(39, 40);
+            this.MemorySave.TabIndex = 40;
+            this.MemorySave.Text = "MS";
+            this.MemorySave.UseVisualStyleBackColor = true;
+            this.MemorySave.Click += new System.EventHandler(this.MemorySave_Click);
+            // 
+            // MemoryPlus
+            // 
+            this.MemoryPlus.Location = new System.Drawing.Point(92, 51);
+            this.MemoryPlus.Name = "MemoryPlus";
+            this.MemoryPlus.Size = new System.Drawing.Size(39, 40);
+            this.MemoryPlus.TabIndex = 41;
+            this.MemoryPlus.Text = "M+";
+            this.MemoryPlus.UseVisualStyleBackColor = true;
+            this.MemoryPlus.Click += new System.EventHandler(this.MemoryPlus_Click);
+            // 
+            // MemoryMinus
+            // 
+            this.MemoryMinus.Location = new System.Drawing.Point(137, 51);
+            this.MemoryMinus.Name = "MemoryMinus";
+            this.MemoryMinus.Size = new System.Drawing.Size(39, 40);
+            this.MemoryMinus.TabIndex = 42;
+            this.MemoryMinus.Text = "M-";
+            this.MemoryMinus.UseVisualStyleBackColor = true;
+            this.MemoryMinus.Click += new System.EventHandler(this.MemoryMinus_Click);
+            // 
+            // Memory
+            // 
+            this.Memory.AutoSize = true;
+            this.Memory.Location = new System.Drawing.Point(69, 9);
+            this.Memory.Name = "Memory";
+            this.Memory.Size = new System.Drawing.Size(0, 13);
+            this.Memory.TabIndex = 43;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(187, 305);
+            this.ClientSize = new System.Drawing.Size(256, 313);
+            this.Controls.Add(this.Memory);
+            this.Controls.Add(this.MemoryMinus);
+            this.Controls.Add(this.MemoryPlus);
+            this.Controls.Add(this.MemorySave);
+            this.Controls.Add(this.MemoryRead);
+            this.Controls.Add(this.MemoryClear);
             this.Controls.Add(this.oper);
             this.Controls.Add(this.number);
             this.Controls.Add(this.btnCE);
@@ -311,6 +381,12 @@
         private System.Windows.Forms.Button btnCE;
         private System.Windows.Forms.Label number;
         private System.Windows.Forms.Label oper;
+        private System.Windows.Forms.Button MemoryClear;
+        private System.Windows.Forms.Button MemoryRead;
+        private System.Windows.Forms.Button MemorySave;
+        private System.Windows.Forms.Button MemoryPlus;
+        private System.Windows.Forms.Button MemoryMinus;
+        private System.Windows.Forms.Label Memory;
     }
 }
 

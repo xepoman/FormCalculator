@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace WindowsFormsApp4
 {
     public partial class Form1 : Form
     {
+        const string PATH = @"C:\calc\ms.txt"; 
+        bool proverkaDot = false;
         bool flag = false; 
         public Form1()
         {
@@ -36,6 +39,11 @@ namespace WindowsFormsApp4
                 case "*":
                     return a * b;
                 case "/":
+                    if (b == 0)
+                    {
+                        MessageBox.Show("На 0 делить нельзя");
+                        return 0;
+                    }
                     return a / b;
                 default:
                     return Convert.ToDouble(textBox1.Text);
@@ -43,6 +51,17 @@ namespace WindowsFormsApp4
         }
         private void number1_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                if (textBox1.Text[10] == '1') ;
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка теста");
+            }
+           
+           
             if (flag)
             {
                 flag = false;
@@ -133,12 +152,24 @@ namespace WindowsFormsApp4
 
         private void number0_Click(object sender, EventArgs e)
         {
+            // если первый символ равен 0 а второй не равен Запятой 0 не ставим
+            // если ни чего не стоит ставим 0
+            // если первый символ равен 0 а второй символ запятоя то можно ставить 0
+            // если стоит цифра ставим 0
             if (flag)
             {
                 flag = false;
                 textBox1.Clear();
             }
-            textBox1.Text += "0";
+            
+            if (textBox1.Text!="" && textBox1.Text[0] == '0' && textBox1.Text.Length == 1)
+            {
+                textBox1.Text = "0";
+            }
+            else
+            {
+                textBox1.Text += "0";
+            }
         }
 
         private void minus_Click(object sender, EventArgs e)
@@ -179,24 +210,36 @@ namespace WindowsFormsApp4
 
         private void dotButton_Click(object sender, EventArgs e)
         {
-            if (flag)
+            
+            for (int i = 0; i < textBox1.Text.Length; i++)
             {
-                flag = false;
-                textBox1.Clear();
+               if( textBox1.Text[i] == ',')
+                {
+                    proverkaDot = true;
+                }
             }
-            textBox1.Text += ",";
+            if (!proverkaDot)
+            {
+                if (flag)
+                {
+                    flag = false;
+                    textBox1.Clear();
+                }
+                textBox1.Text += ",";
+            }
         }
+        
 
         private void btnCE_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+            oper.Text = "";
+            number.Text = "";
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
-            oper.Text = "";
-            number.Text = "";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -204,5 +247,42 @@ namespace WindowsFormsApp4
             
         }
 
+        private void MemorySave_Click(object sender, EventArgs e)
+        {
+            string save = textBox1.Text;
+
+            File.WriteAllText(PATH, save);
+           if (save != "") Memory.Text = "M";
+        }
+
+        private void MemoryRead_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = File.ReadAllText(PATH);
+        }
+
+        private void MemoryClear_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(PATH, "");
+            Memory.Text = "";
+        }
+
+        private void MemoryMinus_Click(object sender, EventArgs e)
+        {
+            double minus = Convert.ToDouble(File.ReadAllText(PATH)) - Convert.ToDouble(textBox1.Text);
+            File.WriteAllText(PATH, minus.ToString());
+            textBox1.Text = minus.ToString();
+            if(textBox1.Text !="") Memory.Text = "M-";
+        }
+
+        private void MemoryPlus_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                double plus = Convert.ToDouble(File.ReadAllText(PATH)) + Convert.ToDouble(textBox1.Text);
+            }
+            File.WriteAllText(PATH, plus.ToString());
+            textBox1.Text = plus.ToString();
+            if (textBox1.Text != "") Memory.Text = "M+";
+        }
     }
 }
