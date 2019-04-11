@@ -57,6 +57,7 @@
             this.Memory = new System.Windows.Forms.Label();
             this.korenButton = new System.Windows.Forms.Button();
             this.procentButton = new System.Windows.Forms.Button();
+            this.otrecatelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // number1
@@ -341,11 +342,22 @@
             this.procentButton.UseVisualStyleBackColor = true;
             this.procentButton.Click += new System.EventHandler(this.procentButton_Click);
             // 
+            // otrecatelButton
+            // 
+            this.otrecatelButton.Location = new System.Drawing.Point(92, 280);
+            this.otrecatelButton.Name = "otrecatelButton";
+            this.otrecatelButton.Size = new System.Drawing.Size(39, 40);
+            this.otrecatelButton.TabIndex = 47;
+            this.otrecatelButton.Text = "--";
+            this.otrecatelButton.UseVisualStyleBackColor = true;
+            this.otrecatelButton.Click += new System.EventHandler(this.otrecatelButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 313);
+            this.ClientSize = new System.Drawing.Size(259, 351);
+            this.Controls.Add(this.otrecatelButton);
             this.Controls.Add(this.procentButton);
             this.Controls.Add(this.korenButton);
             this.Controls.Add(this.Memory);
@@ -413,6 +425,7 @@
         private System.Windows.Forms.Label Memory;
         private System.Windows.Forms.Button korenButton;
         private System.Windows.Forms.Button procentButton;
+        private System.Windows.Forms.Button otrecatelButton;
     }
 }
 

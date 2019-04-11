@@ -21,6 +21,17 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
         }
+        private void ClearTextBox()
+        {
+            if (textBox1.Text != "")
+            {
+                if (flag || textBox1.Text[0] == '0')
+                {
+                    flag = false;
+                    textBox1.Clear();
+                }
+            }
+        }
         private double Calculation()
         {
             double a = 0;
@@ -30,9 +41,11 @@ namespace WindowsFormsApp4
                 a = Convert.ToDouble(number.Text);
                 b = Convert.ToDouble(textBox1.Text);
             }
-
-            switch (oper.Text)
+            
+                switch (oper.Text)
             {
+                
+            
                 case "+":
                     return a + b;
                 case "-":
@@ -50,7 +63,14 @@ namespace WindowsFormsApp4
                     }
                     return a / b;
                 default:
-                    return Convert.ToDouble(textBox1.Text);
+                    if (textBox1.Text != "")
+                    {
+                        return Convert.ToDouble(textBox1.Text);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
             }
         }
         private void number1_Click(object sender, EventArgs e)
@@ -64,93 +84,55 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("Ошибка теста");
             }
-           
-           
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "1";
         }
 
         private void number2_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "2";
         }
 
         private void number3_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "3";
         }
 
         private void number4_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "4";
         }
 
         private void number5_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "5";
         }
 
         private void number6_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "6";
         }
 
         private void number7_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "7";
         }
 
         private void number8_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "8";
         }
 
         private void number9_Click(object sender, EventArgs e)
         {
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
+            ClearTextBox();
             textBox1.Text += "9";
         }
 
@@ -160,12 +142,8 @@ namespace WindowsFormsApp4
             // если ни чего не стоит ставим 0
             // если первый символ равен 0 а второй символ запятоя то можно ставить 0
             // если стоит цифра ставим 0
-            if (flag)
-            {
-                flag = false;
-                textBox1.Clear();
-            }
-            
+            ClearTextBox();
+
             if (textBox1.Text!="" && textBox1.Text[0] == '0' && textBox1.Text.Length == 1)
             {
                 textBox1.Text = "0";
@@ -321,23 +299,46 @@ namespace WindowsFormsApp4
 
         private void korenButton_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(textBox1.Text) < 0)
+            if (textBox1.Text != "")
             {
-                MessageBox.Show("Отрицательное нельзя");
-            }
-            else
-            {
-                textBox1.Text = Math.Sqrt(Convert.ToDouble(textBox1.Text)).ToString();
+                if (Convert.ToDouble(textBox1.Text) < 0)
+                {
+                    MessageBox.Show("Отрицательное нельзя");
+                }
+                else
+                {
+                    textBox1.Text = Math.Sqrt(Convert.ToDouble(textBox1.Text)).ToString();
+                }
             }
         }
 
         private void procentButton_Click(object sender, EventArgs e)
         {
-            number.Text = $"{Calculation()}";
-            oper.Text = "%";
-            textBox1.Clear();
+            if (textBox1.Text != "")
+            {
+                number.Text = $"{Calculation()}";
+                oper.Text = "%";
+                textBox1.Clear();
+            }
             
             
+        }
+
+        private void otrecatelButton_Click(object sender, EventArgs e)
+        {
+            
+            if (textBox1.Text != "0" && textBox1.Text != "")
+            {
+                if (textBox1.Text[0] != '-')
+                {
+                    textBox1.Text = "-" + textBox1.Text;
+                }
+                else
+                {
+                    textBox1.Text = (Convert.ToDouble(textBox1.Text)*-1).ToString();
+                }
+                
+            }
         }
     }
 }
