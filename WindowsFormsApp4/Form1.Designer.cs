@@ -55,6 +55,8 @@
             this.MemoryPlus = new System.Windows.Forms.Button();
             this.MemoryMinus = new System.Windows.Forms.Button();
             this.Memory = new System.Windows.Forms.Label();
+            this.korenButton = new System.Windows.Forms.Button();
+            this.procentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // number1
@@ -319,11 +321,33 @@
             this.Memory.Size = new System.Drawing.Size(0, 13);
             this.Memory.TabIndex = 43;
             // 
+            // korenButton
+            // 
+            this.korenButton.Location = new System.Drawing.Point(182, 234);
+            this.korenButton.Name = "korenButton";
+            this.korenButton.Size = new System.Drawing.Size(39, 40);
+            this.korenButton.TabIndex = 45;
+            this.korenButton.Text = "√";
+            this.korenButton.UseVisualStyleBackColor = true;
+            this.korenButton.Click += new System.EventHandler(this.korenButton_Click);
+            // 
+            // procentButton
+            // 
+            this.procentButton.Location = new System.Drawing.Point(182, 185);
+            this.procentButton.Name = "procentButton";
+            this.procentButton.Size = new System.Drawing.Size(39, 40);
+            this.procentButton.TabIndex = 46;
+            this.procentButton.Text = "%";
+            this.procentButton.UseVisualStyleBackColor = true;
+            this.procentButton.Click += new System.EventHandler(this.procentButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 313);
+            this.Controls.Add(this.procentButton);
+            this.Controls.Add(this.korenButton);
             this.Controls.Add(this.Memory);
             this.Controls.Add(this.MemoryMinus);
             this.Controls.Add(this.MemoryPlus);
@@ -387,6 +411,8 @@
         private System.Windows.Forms.Button MemoryPlus;
         private System.Windows.Forms.Button MemoryMinus;
         private System.Windows.Forms.Label Memory;
+        private System.Windows.Forms.Button korenButton;
+        private System.Windows.Forms.Button procentButton;
     }
 }
 

@@ -13,6 +13,7 @@ namespace WindowsFormsApp4
 {
     public partial class Form1 : Form
     {
+        bool memorySaveFlag = false;
         const string PATH = @"C:\calc\ms.txt"; 
         bool proverkaDot = false;
         bool flag = false; 
@@ -36,6 +37,9 @@ namespace WindowsFormsApp4
                     return a + b;
                 case "-":
                     return a - b;
+                case "%":
+                    return a * b / 100;
+                
                 case "*":
                     return a * b;
                 case "/":
@@ -250,39 +254,90 @@ namespace WindowsFormsApp4
         private void MemorySave_Click(object sender, EventArgs e)
         {
             string save = textBox1.Text;
-
-            File.WriteAllText(PATH, save);
-           if (save != "") Memory.Text = "M";
+            if (save != "")
+            {
+                memorySaveFlag = true;
+                File.WriteAllText(PATH, save);
+                Memory.Text = "M";
+            }
         }
 
         private void MemoryRead_Click(object sender, EventArgs e)
         {
-            textBox1.Text = File.ReadAllText(PATH);
+            if (memorySaveFlag)
+            {
+                textBox1.Text = File.ReadAllText(PATH);
+            }
         }
 
         private void MemoryClear_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(PATH, "");
-            Memory.Text = "";
+            if (memorySaveFlag)
+            {
+                File.WriteAllText(PATH, "");
+                Memory.Text = "";
+            }
         }
 
         private void MemoryMinus_Click(object sender, EventArgs e)
         {
-            double minus = Convert.ToDouble(File.ReadAllText(PATH)) - Convert.ToDouble(textBox1.Text);
-            File.WriteAllText(PATH, minus.ToString());
-            textBox1.Text = minus.ToString();
-            if(textBox1.Text !="") Memory.Text = "M-";
+            if (textBox1.Text != "")
+            {
+                double minus;
+                if (!memorySaveFlag)
+                {
+                    minus = 0 - Convert.ToDouble(textBox1.Text);
+                }
+                else
+                {
+                    minus = Convert.ToDouble(File.ReadAllText(PATH)) - Convert.ToDouble(textBox1.Text);
+                }
+                memorySaveFlag = true;
+                File.WriteAllText(PATH, minus.ToString());
+                textBox1.Text = minus.ToString();
+                Memory.Text = "M-";
+            }
         }
 
         private void MemoryPlus_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
             {
-                double plus = Convert.ToDouble(File.ReadAllText(PATH)) + Convert.ToDouble(textBox1.Text);
+                double plus;
+                if (!memorySaveFlag)
+                {
+                    plus = 0 + Convert.ToDouble(textBox1.Text);
+                }
+                else
+                {
+                    plus = Convert.ToDouble(File.ReadAllText(PATH)) + Convert.ToDouble(textBox1.Text);
+                }
+                memorySaveFlag = true;
+                File.WriteAllText(PATH, plus.ToString());
+                textBox1.Text = plus.ToString();
+                if (textBox1.Text != "") Memory.Text = "M+";
             }
-            File.WriteAllText(PATH, plus.ToString());
-            textBox1.Text = plus.ToString();
-            if (textBox1.Text != "") Memory.Text = "M+";
+        }
+
+        private void korenButton_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(textBox1.Text) < 0)
+            {
+                MessageBox.Show("Отрицательное нельзя");
+            }
+            else
+            {
+                textBox1.Text = Math.Sqrt(Convert.ToDouble(textBox1.Text)).ToString();
+            }
+        }
+
+        private void procentButton_Click(object sender, EventArgs e)
+        {
+            number.Text = $"{Calculation()}";
+            oper.Text = "%";
+            textBox1.Clear();
+            
+            
         }
     }
 }
